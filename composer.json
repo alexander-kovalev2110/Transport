@@ -1,0 +1,15 @@
+{
+    "name": "user/transport",
+    "autoload": {
+        "psr-4": {
+            "TransportCalculator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "alexander-kovalev2110",
+            "email": "alexander.kovalev@yahoo.com"
+        }
+    ],
+    "require": {}
+}
