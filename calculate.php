@@ -22,16 +22,22 @@ $tripCalculator->addVehicle($taxi);
 $tripCalculator->addVehicle($bike);
 
 // Input parameters for calculation
-$passengers = 4;
-$baggageWeight = 20;
-$distance = 100;
 $fuelPrice = 1.2;
 $kilometerRate = 0.5;
 
+// Getting parameters from a dialog form
+$passengers = abs($_POST['passengers']);
+$baggage = abs($_POST['baggage']);
+$distance = abs($_POST['distance']);
+
+echo "Passengers: $passengers<br>";
+echo "Baggage: $baggage kg<br>";
+echo "Distance: $distance km<br><br>";
+
 // Trip cost calculation
-$results = $tripCalculator->calculate($passengers, $baggageWeight, $distance, $fuelPrice, $kilometerRate);
+$results = $tripCalculator->calculate($passengers, $baggage, $distance, $fuelPrice, $kilometerRate);
 
 // Output of results
 foreach ($results as $result) {
-    echo "Транспортний засіб: " . $result['vehicle'] . " - Вартість поїздки: " . $result['cost'] . " грн\n";
+    echo "Транспортний засіб: " . $result['vehicle'] . " - Вартість поїздки: " . $result['cost'] . " грн<br>";
 }

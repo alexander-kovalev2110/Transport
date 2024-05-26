@@ -9,11 +9,11 @@ class MiniBus extends Vehicle
         parent::__construct('MiniBus', 10, 80, 15, 150, 2, 1.4);
     }
 
-    public function calculateTripCost($passengers, $baggageWeight, $distance, $fuelPrice, $kilometerRate)
+    public function calculateTripCost($passengers, $baggage, $distance, $fuelPrice, $kilometerRate)
     {
         try {
-            if ($passengers > $this->passengers || $baggageWeight > $this->maxBaggageWeight || $distance > $this->maxDistance) {
-              throw new \Exception("Недійсна поїздка для мікроавтобуса.");
+            if ($passengers > $this->passengers || $baggage > $this->maxBaggageWeight || $distance > $this->maxDistance) {
+              throw new \Exception("Недійсна поїздка для мікроавтобуса.<br>");
             } 
             
             $fuelCost = ($distance / 100) * $this->fuelConsumptionPer100Km * $fuelPrice;

@@ -9,11 +9,11 @@ class Bus extends Vehicle
         parent::__construct('Bus', 32, 200, 20, 300, 2, 1.5);
     }
 
-    public function calculateTripCost($passengers, $baggageWeight, $distance, $fuelPrice, $kilometerRate)
+    public function calculateTripCost($passengers, $baggage, $distance, $fuelPrice, $kilometerRate)
     {
         try {
-            if ($passengers > $this->passengers || $baggageWeight > $this->maxBaggageWeight || $distance > $this->maxDistance) {
-              throw new \Exception("Недійсна поїздка для автобуса.");
+            if ($passengers > $this->passengers || $baggage > $this->maxBaggageWeight || $distance > $this->maxDistance) {
+              throw new \Exception("Недійсна поїздка для автобуса.<br>");
             } 
             
             $fuelCost = ($distance / 100) * $this->fuelConsumptionPer100Km * $fuelPrice;

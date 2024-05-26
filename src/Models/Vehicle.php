@@ -30,7 +30,7 @@ abstract class Vehicle
         $this->driverCoef = $driverCoef;
     }
 
-    abstract public function calculateTripCost($passengers, $baggageWeight, $distance, $fuelPrice, $kilometerRate);
+    abstract public function calculateTripCost($passengers, $baggage, $distance, $fuelPrice, $kilometerRate);
 
     public function getName()
     {
